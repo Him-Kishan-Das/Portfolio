@@ -24,7 +24,7 @@ export default function Education() {
       id="education"
       title="Education"
       subtitle="Academic background and qualifications."
-      className="py-24 my-24 transition-colors duration-500"
+      className="py-24 section-gradient transition-colors duration-500"
     >
       <div className="grid gap-8 max-w-4xl mx-auto">
         {educations.map((ed, i) => (

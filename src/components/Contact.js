@@ -14,7 +14,7 @@ export default function Contact() {
       id="contact"
       title="Let’s work together"
       subtitle="Open to internships and full-time roles in frontend/React."
-      className="section-contact py-24 transition-colors duration-500"
+      className="section-contact py-24 transition-colors duration-500 section-gradient"
     >
       <motion.div
         className="card contact-card container mx-auto max-w-xl p-8 rounded-xl shadow-md transition-colors duration-500"

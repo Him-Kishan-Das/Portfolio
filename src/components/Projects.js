@@ -19,7 +19,7 @@ export default function Projects() {
       id="projects"
       title="Selected Projects"
       subtitle="Interactive builds showcasing React, animations, and performance."
-      className="py-24 my-10 overflow-hidden"
+      className="py-24 section-gradient overflow-hidden"
     >
       <div className="
         max-w-7xl mx-auto 

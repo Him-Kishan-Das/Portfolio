@@ -19,11 +19,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15 }}
         >
-          MCA Graduate • Frontend Developer • React & UI Animations
+          MCA Graduate, Cotton University • Full Stack Web Developer
         </motion.h2>
         <p className="hero-lead">
-          I create fast, delightful web experiences with React, Framer Motion, and modern tooling.
-          I love crafting interactions, smooth scrolling, and immersive UI details that stand out.
+          Web developer with hands-on experience as a trainee at National Informatics Centre (NIC), Assam State Centre. Skilled in building robust, modern applications using the latest web technologies.
         </p>
         <div className="hero-cta">
           <motion.a
@@ -38,9 +37,10 @@ export default function Hero() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="btn btn-outline"
-            href="/resume.pdf"
+            href="/Him-Kishan-Das-CV.pdf"
             target="_blank"
             rel="noopener"
+            download
           >
             Download CV
           </motion.a>
@@ -57,7 +57,7 @@ export default function Hero() {
           <motion.a
             className="btn btn-outline"
             whileHover={{ x: 2 }}
-            href="https://linkedin.com/in/your-handle"
+            href="https://www.linkedin.com/in/him-kishan-das-8909551a0/"
             target="_blank"
             rel="noopener"
             title="LinkedIn"
