@@ -32,19 +32,19 @@ export default function Certification() {
       id="certification"
       title="Certifications"
       subtitle="Professional courses and credentials."
+      className="my-36 transition-colors duration-500"
     >
-      <div className="w-full flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {certifications.map((cert, i) => (
             <motion.div
               key={cert.title + cert.year}
-              className="bg-white rounded-xl shadow-lg flex flex-col transition-all duration-200 hover:-translate-y-2 hover:shadow-2xl w-[320px] mx-auto"
+              className="bg-white dark:bg-[#23263a] text-gray-900 dark:text-gray-100 rounded-xl shadow-lg flex flex-col transition-all duration-200 hover:-translate-y-2 hover:shadow-2xl w-full"
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ delay: i * 0.13, duration: 0.5, type: "spring" }}
             >
-              {/* Top: Full-width image */}
               <div className="w-full h-28 rounded-t-xl overflow-hidden bg-black">
                 <img
                   src={cert.image}
@@ -53,15 +53,12 @@ export default function Certification() {
                   loading="lazy"
                 />
               </div>
-              {/* Bottom: Title/details */}
               <div className="flex-1 flex flex-col justify-center items-center px-2 py-6 text-center">
-                <div className="text-lg font-semibold text-black mb-0">
+                <div className="text-lg font-semibold text-black dark:text-gray-100 mb-0">
                   {cert.link
                     ? <a href={cert.link} target="_blank" rel="noopener noreferrer" className="hover:underline">{cert.title}</a>
                     : cert.title}
                 </div>
-                {/* Optionally add year or issuer below */}
-                {/* <div className="text-sm text-gray-500 mt-1">{cert.year}</div> */}
               </div>
             </motion.div>
           ))}

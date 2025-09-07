@@ -48,7 +48,7 @@
     margin: 0 auto;
   }
   
-  .section { padding: 96px 0; }
+  .section { padding: 100px 0; }
   
   .section-title {
     font-size: clamp(28px, 4vw, 42px);
@@ -327,3 +327,4 @@
     width: 100%;
   }
 }
+

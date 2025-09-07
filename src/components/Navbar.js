@@ -1,16 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import ThemeToggle from './ThemeToggle.js';
+import React from "react";
+import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle.js";
+import HKD from './assets/HKD-removebg-preview.png';
 
 const links = [
-  { href: '#home', label: 'Home' },
-  { href: '#education', label: 'Education' },
-  { href: '#certification', label: 'Certifications' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' }
+  { href: "#home", label: "Home" },
+  { href: "#education", label: "Education" },
+  { href: "#certification", label: "Certifications" },
+  { href: "$techstack", label: "TechStacks" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
+  
   return (
     <div className="navbar">
       <div className="container navbar-inner">
@@ -18,10 +21,14 @@ export default function Navbar() {
           href="#home"
           initial={{ y: -16, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="nav-link"
-          style={{ fontWeight: 800, color: 'var(--text)' }}
+          className="nav-link nav-brand-cursive"
+          style={{ color: "var(--text)" }}
         >
-          HKD
+<img
+  src={HKD}
+  alt="HKD logo"
+  className="h-9 w-auto dark:invert transition duration-300"
+/>
         </motion.a>
         <div className="nav-links">
           {links.map((l, i) => (

@@ -19,34 +19,51 @@ export default function Projects() {
       id="projects"
       title="Selected Projects"
       subtitle="Interactive builds showcasing React, animations, and performance."
+      className="py-24 my-10 overflow-hidden"
     >
-      <div className="grid grid-3">
+      <div className="
+        max-w-7xl mx-auto 
+        grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
+        gap-8 
+        place-items-center 
+        pb-24
+      ">
         {projects.map((p, i) => (
           <motion.article
             key={p.title}
-            className="card project-card"
+            className="card project-card p-7 min-h-[260px] hover:shadow-2xl border-t-4 border-transparent hover:border-blue-400 transition-all duration-300"
             custom={i}
             initial="off"
             whileInView="on"
             viewport={{ once: true, margin: '-80px' }}
             variants={cardVariants}
-            whileHover={{ y: -4 }}
+            whileHover={{ y: -6 }}
           >
-            <motion.div
-              className="project-thumb"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: 'spring', stiffness: 180, damping: 15 }}
-            />
-            <h4 className="project-title">{p.title}</h4>
-            <p style={{ color: 'var(--muted)', margin: 0 }}>{p.description}</p>
-            <div className="project-tags">
+            <h4 className="project-title text-2xl font-extrabold mb-2">
+              {p.title}
+            </h4>
+            <p className="project-desc mb-4">{p.description}</p>
+            <div className="project-tags flex flex-wrap gap-2 mb-4">
               {p.tags.map((t) => (
-                <span key={t}>#{t}</span>
+                <span
+                  key={t}
+                  className="bg-gradient-to-tr from-blue-100 to-pink-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold shadow-sm"
+                >
+                  #{t}
+                </span>
               ))}
             </div>
-            <div style={{ display: 'flex', gap: 10, marginTop: 8 }}>
-              <a className="btn btn-outline" href={p.demo} target="_blank" rel="noopener">Live</a>
-              <a className="btn btn-outline" href={p.source} target="_blank" rel="noopener">Code</a>
+            <div className="flex gap-3 mt-auto">
+              <a
+                className="px-5 py-2 rounded-lg font-bold transition
+                  bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg
+                  hover:from-pink-500 hover:to-yellow-500 hover:scale-105"
+                href={p.source}
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub Repo
+              </a>
             </div>
           </motion.article>
         ))}
