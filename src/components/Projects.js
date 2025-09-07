@@ -13,6 +13,14 @@ const cardVariants = {
   })
 };
 
+// Optionally, truncate description to a max word count
+function truncateWords(str, maxWords) {
+  if (!str) return '';
+  const words = str.split(' ');
+  if (words.length <= maxWords) return str;
+  return words.slice(0, maxWords).join(' ') + '...';
+}
+
 export default function Projects() {
   return (
     <Section
@@ -25,13 +33,14 @@ export default function Projects() {
         max-w-7xl mx-auto 
         grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
         gap-8 
-        place-items-center 
+        place-items-stretch
+        items-stretch
         pb-24
       ">
         {projects.map((p, i) => (
           <motion.article
             key={p.title}
-            className="card project-card p-7 min-h-[260px] hover:shadow-2xl border-t-4 border-transparent hover:border-blue-400 transition-all duration-300"
+            className="card project-card flex flex-col h-full p-7 min-h-[340px] hover:shadow-2xl border-t-4 border-transparent hover:border-blue-400 transition-all duration-300"
             custom={i}
             initial="off"
             whileInView="on"
@@ -39,11 +48,11 @@ export default function Projects() {
             variants={cardVariants}
             whileHover={{ y: -6 }}
           >
-            <h4 className="project-title text-2xl font-extrabold mb-2">
+            <h4 className="project-title text-2xl font-extrabold mb-2 ">
               {p.title}
             </h4>
-            <p className="project-desc mb-4">{p.description}</p>
-            <div className="project-tags flex flex-wrap gap-2 mb-4">
+            <p className="project-desc mb-4 ">{truncateWords(p.description, 28)}</p>
+            <div className="project-tags flex flex-wrap gap-2 mb-4 ">
               {p.tags.map((t) => (
                 <span
                   key={t}
@@ -53,7 +62,7 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            <div className="flex gap-3 mt-auto">
+            <div className="flex gap-3 mt-auto justify-center">
               <a
                 className="px-5 py-2 rounded-lg font-bold transition
                   bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg
