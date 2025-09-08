@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.c3d34a0e.css",
-    "main.js": "/Portfolio/static/js/main.de7569e0.js",
+    "main.css": "/Portfolio/static/css/main.d32846b3.css",
+    "main.js": "/Portfolio/static/js/main.b112c76d.js",
+    "static/media/cotton university logo.png": "/Portfolio/static/media/cotton university logo.e917d41c2d237942573a.png",
     "static/media/geeksforgeeks.jpeg": "/Portfolio/static/media/geeksforgeeks.9614d7ef77a04bc21dbf.jpeg",
+    "static/media/gauhati univeristy logo.png": "/Portfolio/static/media/gauhati univeristy logo.0267c93c348ecb2fa77d.png",
     "index.html": "/Portfolio/index.html",
-    "main.c3d34a0e.css.map": "/Portfolio/static/css/main.c3d34a0e.css.map",
-    "main.de7569e0.js.map": "/Portfolio/static/js/main.de7569e0.js.map"
+    "main.d32846b3.css.map": "/Portfolio/static/css/main.d32846b3.css.map",
+    "main.b112c76d.js.map": "/Portfolio/static/js/main.b112c76d.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3d34a0e.css",
-    "static/js/main.de7569e0.js"
+    "static/css/main.d32846b3.css",
+    "static/js/main.b112c76d.js"
   ]
 }
