@@ -25,8 +25,8 @@ export default function Projects() {
   return (
     <Section
       id="projects"
-      title="Selected Projects"
-      subtitle="Interactive builds showcasing React, animations, and performance."
+      title="Projects"
+      subtitle="Some of my full-stack projects"
       className="py-24 section-gradient overflow-hidden"
     >
       <div className="

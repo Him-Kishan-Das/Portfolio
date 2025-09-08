@@ -8,6 +8,7 @@ import Footer from './components/Footer.js';
 import ScrollProgress from './components/ScrollProgress.js';
 import Education from './components/Education.js';
 import Certification from './components/Certification.js';
+import TechStack from './components/TechStack.js';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Education />
           <Certification />
           <Projects />
+          <TechStack />
           <Contact />
         </AnimatePresence>
       </main>

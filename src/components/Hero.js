@@ -22,7 +22,7 @@ export default function Hero() {
           MCA Graduate, Cotton University • Full Stack Web Developer
         </motion.h2>
         <p className="hero-lead">
-          Web developer with hands-on experience as a trainee at National Informatics Centre (NIC), Assam State Centre. Skilled in building robust, modern applications using the latest web technologies.
+          Web developer with hands-on experience as a trainee at <b className='text-blue-400'> National Informatics Centre (NIC), Assam State Centre</b>. Skilled in building robust, modern applications using the latest web technologies.
         </p>
         <div className="hero-cta">
           <motion.a
