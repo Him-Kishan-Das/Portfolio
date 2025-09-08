@@ -37,7 +37,7 @@ export default function Hero() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="btn btn-outline"
-            href="Portfolio/Him-Kishan-Das-CV-2025.pdf"
+            href="/Portfolio/Him-Kishan-Das-CV-2025.pdf"
             target="_blank"
             rel="noopener"
             download
