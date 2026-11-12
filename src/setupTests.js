@@ -3,3 +3,26 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+global.IntersectionObserver = class IntersectionObserver {
+  constructor() {}
+  disconnect() {}
+  observe() {}
+  unobserve() {}
+  takeRecords() {
+    return [];
+  }
+};
+
+window.HTMLCanvasElement.prototype.getContext = () => null;
+
+window.matchMedia = window.matchMedia || function() {
+  return {
+    matches: false,
+    addListener: function() {},
+    removeListener: function() {},
+    addEventListener: function() {},
+    removeEventListener: function() {},
+    dispatchEvent: function() { return false; }
+  };
+};

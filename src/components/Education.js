@@ -1,59 +1,91 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Section from "./Section.js";
+import React from 'react';
+import { motion } from 'framer-motion';
+import Section from './Section.js';
 import CottonLogo from './assets/cotton university logo.png';
 import GauhatiLogo from './assets/gauhati univeristy logo.png';
-
-const educations = [
-  {
-    degree: "Master of Computer Applications (MCA)",
-    institution: "Cotton University",
-    year: "2023-25",
-    logo: CottonLogo,
-    details:
-      "Postgraduate degree with focus on advanced software engineering, algorithms, and full stack web development. Completed major projects and internships in web technologies at National Informatics Centre, Assam State Centre.",
-  },
-  {
-    degree: "Bachelor of Computer Applications (BCA)",
-    institution: "Gauhati University (Pragjyotish College)",
-    year: "2020-23",
-    logo: GauhatiLogo,
-    details:
-      "Undergraduate degree covering computer science fundamentals, programming, and database systems. Built a strong base in software development.",
-  },
-];
+import { educationList } from '../utils/data.js';
+import { FaGraduationCap, FaCalendarAlt, FaAward, FaBookOpen } from 'react-icons/fa';
 
 export default function Education() {
+  // Cotton University logo for Cotton University MCA (idx 0)
+  // Gauhati University logo for Gauhati University BCA (idx 1)
+  const logos = [CottonLogo, GauhatiLogo, null, null];
+
   return (
     <Section
       id="education"
       title="Education"
-      subtitle="Academic background and qualifications."
-      className="py-24 section-gradient transition-colors duration-500"
+      subtitle="Academic degrees, percentages, and coursework exactly from my resume"
+      className="py-20"
     >
-      <div className="grid gap-8 max-w-4xl mx-auto">
-        {educations.map((ed, i) => (
-          <motion.div
-            key={ed.degree + ed.year}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ delay: i * 0.08 }}
-            className="card p-8 transition-colors duration-500 flex items-center gap-6"
-          >
-            <img
-              src={ed.logo}
-              alt={ed.institution + " logo"}
-              className="w-16 h-16 object-contain rounded-full shadow-md border border-gray-200 bg-white flex-shrink-0"
-            />
-            <div className="flex flex-col justify-center">
-              <div className="card-title font-bold text-xl mb-1">{ed.degree}</div>
-              <div className="card-sub font-semibold mb-1">{ed.institution}</div>
-              <div className="card-tag text-sm mb-2">{ed.year}</div>
-              <div className="card-desc text-gray-300">{ed.details}</div>
-            </div>
-          </motion.div>
-        ))}
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="space-y-6 text-left">
+          {educationList.map((ed, i) => (
+            <motion.div
+              key={ed.degree + ed.period}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+              className="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-white/10 hover:border-sky-500/50 transition-all duration-300"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+                <div className="flex items-start gap-4">
+                  {logos[i] ? (
+                    <img
+                      src={logos[i]}
+                      alt={ed.institution + ' logo'}
+                      className="w-14 h-14 object-contain rounded-2xl p-1.5 bg-white border border-slate-200 shadow-sm flex-shrink-0"
+                    />
+                  ) : (
+                    <div className="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-600 dark:text-sky-400 flex items-center justify-center text-2xl flex-shrink-0">
+                      <FaGraduationCap />
+                    </div>
+                  )}
+
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-1">
+                      {ed.institution}
+                    </h4>
+                    <div className="text-sm sm:text-base font-semibold text-sky-600 dark:text-sky-400">
+                      {ed.degree}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-row sm:flex-col sm:items-end gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
+                    <FaAward className="text-xs" />
+                    {ed.grade}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-xs text-slate-500 dark:text-gray-400">
+                    <FaCalendarAlt className="text-sky-500" />
+                    {ed.period}
+                  </span>
+                </div>
+              </div>
+
+              {/* Coursework exactly from resume */}
+              <div className="pt-3 border-t border-slate-200/80 dark:border-white/10">
+                <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-gray-400 mb-2">
+                  <FaBookOpen className="text-sky-500" />
+                  <span>Coursework:</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {ed.coursework.split(',').map((course, cIdx) => (
+                    <span
+                      key={cIdx}
+                      className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300"
+                    >
+                      {course.trim()}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </Section>
   );

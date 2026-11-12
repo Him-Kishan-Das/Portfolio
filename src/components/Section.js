@@ -9,7 +9,7 @@ export default function Section({ id, title, subtitle, children, className = "" 
     >
       <div className="container mx-auto px-4 text-center">
         <motion.h3
-          className="section-title text-3xl sm:text-4xl font-bold mb-2 transition-colors duration-300"
+          className="section-title text-3xl sm:text-4xl font-extrabold mb-3 text-slate-900 dark:text-white tracking-tight"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -19,7 +19,7 @@ export default function Section({ id, title, subtitle, children, className = "" 
         </motion.h3>
         {subtitle && (
           <motion.p
-            className="section-subtitle text-lg mb-8 text-gray-600 dark:text-gray-300 transition-colors duration-300"
+            className="text-base sm:text-lg mb-12 text-slate-600 dark:text-gray-400 font-normal max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
